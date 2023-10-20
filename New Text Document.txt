@@ -1,0 +1,94 @@
+ 	POSTMAN
+____________________________________________________________
+http://localhost:9595/product/save 	POST		сохранять
+{
+    "prodCode":"Samsung",
+    "prodCost":10000.0,
+    "prodVendor":"Korea"
+}
+{
+    "prodCode":"Nokia",
+    "prodCost":30000.0,
+    "prodVendor":"Europa"
+}
+____________________________________________________________
+http://localhost:9595/product/all         GET		все
+[
+    {
+        "prodId": 1,
+        "prodCode": "Samsung",
+        "prodCost": 10000.0,
+        "prodVendor": "Korea",
+        "prodSkidka": 1200.0,
+        "prodGst": 1800.0
+    },
+    {
+        "prodId": 2,
+        "prodCode": "Nokia",
+        "prodCost": 30000.0,
+        "prodVendor": "Europa",
+        "prodSkidka": 3600.0,
+        "prodGst": 5400.0
+    }
+]
+____________________________________________________________
+http://localhost:9595/product/find/1	     GET  		находить
+{
+    "prodId": 1,
+    "prodCode": "Apple",
+    "prodCost": 1000000.0,
+    "prodVendor": "China",
+    "prodSkidka": 120000.0,
+    "prodGst": 180000.0
+}
+
+http://localhost:9595/product/find/2	   GET
+{
+    "prodId": 2,
+    "prodCode": "Samsung",
+    "prodCost": 500000.0,
+    "prodVendor": "Korea",
+    "prodSkidka": 60000.0,
+    "prodGst": 90000.0
+},
+____________________________________________________________
+http://localhost:9595/product/find/4 	GET		находить
+
+  Product        4         Not Exist
+"Product " + id + " Не существует"
+____________________________________________________________________
+http://localhost:9595/product/remove/3		DELETE		удалять
+
+Product remove 3
+Удаление продукта 3
+________________________________________________________________
+http://localhost:9595/product/modify   	PUT		изменить
+[
+    {
+        "prodId": 1,
+        "prodCode": "LLGG",
+        "prodCost": 2.34343E10,
+        "prodVendor": "USA",
+        "prodSkidka": 2.812116E9,
+        "prodGst": 4.218174E9
+    },
+  {
+        "prodId": 2,
+        "prodCode": "SSAAMMSSUUNNGG",
+        "prodCost": 20.0,
+        "prodVendor": "KORII",
+        "prodSkidka": 2.4,
+        "prodGst": 3.6
+    }
+________________________________________________________________
+//http://localhost:9595/product/update/1/LLGG       PATCH
+[
+    {
+        "prodId": 1,
+        "prodCode": "Samsung", --> <-- LLGG
+        "prodCost": 10000.0,
+        "prodVendor": "Korea",
+        "prodSkidka": 1200.0,
+        "prodGst": 1800.0
+    },
+]
